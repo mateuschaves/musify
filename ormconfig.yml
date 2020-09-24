@@ -5,3 +5,5 @@ default: # default connection
   username: 'postgres'
   password: 123456
   database: 'postgres'
+  entities: ['src/app/entities/*.ts']
+  synchronize: true
