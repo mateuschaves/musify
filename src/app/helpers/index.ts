@@ -1,3 +1,3 @@
-import ValidationHelper from "./ValidatorHelper";
+import ValidationHelper from './ValidatorHelper'
 
-export { ValidationHelper };
+export { ValidationHelper }

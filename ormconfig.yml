@@ -1,0 +1,7 @@
+default: # default connection
+  type: 'postgres'
+  host: 'database'
+  port: 5432
+  username: 'postgres'
+  password: 123456
+  database: 'postgres'

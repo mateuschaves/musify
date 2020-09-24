@@ -1,3 +1,3 @@
-import UserEntity from "./UserEntity";
+import UserEntity from './UserEntity'
 
-export { UserEntity };
+export { UserEntity }

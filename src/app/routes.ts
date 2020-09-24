@@ -1,20 +1,12 @@
-import { Router } from "express";
+import { Router } from 'express'
 
-const routes = Router();
+const routes = Router()
 
-import { SignInController, SignUpController } from "./controllers";
+import { SignInController, SignUpController } from './controllers'
 
-import { SignInValidator, SignUpValidator } from "./middlewares/validators";
+import { SignInValidator, SignUpValidator } from './middlewares/validators'
 
-routes.post(
-  "/auth/signin",
-  SignInValidator.postRules(),
-  SignInController.store
-);
-routes.post(
-  "/auth/signup",
-  SignUpValidator.postRules(),
-  SignUpController.store
-);
+routes.post('/auth/signin', SignInValidator.postRules(), SignInController.store)
+routes.post('/auth/signup', SignUpValidator.postRules(), SignUpController.store)
 
-export default routes;
+export default routes

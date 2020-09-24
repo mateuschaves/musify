@@ -1,11 +1,12 @@
-import { check } from "express-validator";
+import { check } from 'express-validator'
 
 const postRules = () => [
-  // check("number")
-  //   .exists()
-  //   .withMessage("Messagem de erro")
-  //   .isNumeric()
-  //   .withMessage("Messagem de erro"),
-];
+  check('email')
+    .exists()
+    .withMessage('Informe o email para continuar')
+    .isEmail()
+    .withMessage('Informe um email válido para'),
+  check('password').exists().withMessage('Informe a senha para continuar')
+]
 
-export default { postRules };
+export default { postRules }

@@ -1,31 +1,39 @@
-import dotenv from "dotenv";
+import dotenv from 'dotenv'
+dotenv.config()
 
-import cors from "cors";
-import express, { Express } from "express";
+import 'reflect-metadata'
 
-import routes from "./app/routes";
-// import "./database";
+import cors from 'cors'
+import express, { Express } from 'express'
+import { createConnection } from 'typeorm'
 
-dotenv.config();
+import routes from './app/routes'
 
 class App {
-  public server: Express;
+  public server: Express
 
   constructor() {
-    this.server = express();
-
-    this.middlewares();
-    this.routes();
+    // this.database()
+    //   .then(() => {
+    this.server = express()
+    this.middlewares()
+    this.routes()
+    // })
+    // .catch((error) => console.log(error));
   }
 
   middlewares() {
-    this.server.use(express.json());
-    this.server.use(cors());
+    this.server.use(express.json())
+    this.server.use(cors())
   }
 
   routes() {
-    this.server.use(routes);
+    this.server.use(routes)
+  }
+
+  database(): Promise<any> {
+    return createConnection()
   }
 }
 
-export default new App().server;
+export default new App()
