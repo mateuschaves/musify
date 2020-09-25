@@ -5,7 +5,6 @@ import 'reflect-metadata'
 
 import cors from 'cors'
 import express, { Express } from 'express'
-import { createConnection } from 'typeorm'
 
 import routes from './app/routes'
 
@@ -13,13 +12,9 @@ class App {
   public server: Express
 
   constructor() {
-    // this.database()
-    //   .then(() => {
     this.server = express()
     this.middlewares()
     this.routes()
-    // })
-    // .catch((error) => console.log(error));
   }
 
   middlewares() {
@@ -29,10 +24,6 @@ class App {
 
   routes() {
     this.server.use(routes)
-  }
-
-  database(): Promise<any> {
-    return createConnection()
   }
 }
 
