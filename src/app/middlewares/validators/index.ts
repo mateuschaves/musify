@@ -1,11 +1,6 @@
 import SignInValidator from './SignInValidator'
 import SignUpValidator from './SignUpValidator'
 import TokenValidator from './TokenValidator'
-import CreateMusicValidator from './CreateMusicValidator'
+import MusicValidator from './MusicValidator'
 
-export {
-  SignInValidator,
-  SignUpValidator,
-  TokenValidator,
-  CreateMusicValidator
-}
+export { SignInValidator, SignUpValidator, TokenValidator, MusicValidator }

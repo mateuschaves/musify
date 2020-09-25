@@ -2,7 +2,7 @@ import { Router } from 'express'
 
 import { TokenValidator } from './middlewares/validators'
 
-const routes = Router()
+const routes: any = Router()
 
 import {
   SignInController,
@@ -10,12 +10,25 @@ import {
   MusicController
 } from './controllers'
 
-import { SignInValidator, SignUpValidator } from './middlewares/validators'
+import {
+  SignInValidator,
+  SignUpValidator,
+  MusicValidator
+} from './middlewares/validators'
 
 routes.post('/auth/signin', SignInValidator.postRules(), SignInController.store)
 routes.post('/auth/signup', SignUpValidator.postRules(), SignUpController.store)
 
-routes.post('/musics', [TokenValidator.verifyToken], MusicController.store)
-routes.get('/musics', [TokenValidator.verifyToken], MusicController.index)
+routes.post(
+  '/musics',
+  [MusicValidator.postRules(), TokenValidator.verifyToken],
+  MusicController.store
+)
+routes.get('/musics', TokenValidator.verifyToken, MusicController.index)
+routes.delete(
+  '/musics/:id',
+  [MusicValidator.deleteRules(), TokenValidator.verifyToken],
+  MusicController.destroy
+)
 
 export default routes

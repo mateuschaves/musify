@@ -4,12 +4,12 @@ const postRules = () => [
   check('title')
     .exists()
     .withMessage('Informe o nome da música para continuar')
-    .isString()
+    .notEmpty()
     .withMessage('Informe o título da música corretamente'),
   check('artist')
     .exists()
     .withMessage('Qual o nome do artista ?')
-    .isString()
+    .notEmpty()
     .withMessage('Informe o nome do artista corretamente'),
   check('genre')
     .exists()
@@ -20,4 +20,12 @@ const postRules = () => [
     )
 ]
 
-export default { postRules }
+const deleteRules = () => [
+  check('id')
+    .exists()
+    .withMessage('Informe a música que deseja deletar')
+    .isNumeric()
+    .withMessage('Informe o id da música corretamente')
+]
+
+export default { postRules, deleteRules }

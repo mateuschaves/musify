@@ -42,4 +42,32 @@ export default class MusicController {
       return response.status(400).json(error)
     }
   }
+
+  static async destroy(request: Request, response: Response) {
+    try {
+      await ValidationHelper.hasErrors(request)
+      const userId = request.headers['user-id']
+      const { id } = request.params
+
+      const music = await getRepository(MusicEntity).findOne({
+        where: {
+          userId,
+          id
+        }
+      })
+
+      if (!music)
+        return response.status(400).json({ message: 'Música não encontrada' })
+
+      await getRepository(MusicEntity).delete({
+        id: music.id
+      })
+
+      return response
+        .status(200)
+        .json({ message: 'Música deletada com sucesso' })
+    } catch (error) {
+      return response.status(400).json(error)
+    }
+  }
 }
