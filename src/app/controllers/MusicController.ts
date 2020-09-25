@@ -25,4 +25,21 @@ export default class MusicController {
       return response.status(400).json(error)
     }
   }
+
+  static async index(request: Request, response: Response) {
+    try {
+      await ValidationHelper.hasErrors(request)
+      const userId = request.headers['user-id']
+
+      const musics = await getRepository(MusicEntity).find({
+        where: {
+          userId
+        }
+      })
+
+      return response.status(200).json(musics)
+    } catch (error) {
+      return response.status(400).json(error)
+    }
+  }
 }

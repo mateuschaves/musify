@@ -16,5 +16,6 @@ routes.post('/auth/signin', SignInValidator.postRules(), SignInController.store)
 routes.post('/auth/signup', SignUpValidator.postRules(), SignUpController.store)
 
 routes.post('/musics', [TokenValidator.verifyToken], MusicController.store)
+routes.get('/musics', [TokenValidator.verifyToken], MusicController.index)
 
 export default routes
