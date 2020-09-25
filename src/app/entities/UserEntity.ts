@@ -1,4 +1,12 @@
-import { Entity, Column, PrimaryGeneratedColumn, BeforeInsert } from 'typeorm'
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  BeforeInsert,
+  OneToMany
+} from 'typeorm'
+
+import MusicEntity from './MusicEntity'
 
 import bcrypt from 'bcryptjs'
 
@@ -15,6 +23,9 @@ export default class User {
 
   @Column()
   password: string
+
+  @OneToMany((type) => MusicEntity, (music) => music.user, { eager: true })
+  musics: MusicEntity[]
 
   @BeforeInsert()
   async generadePasswordHash() {

@@ -18,7 +18,7 @@ export default class SignUpController {
           .status(400)
           .json({ message: 'Já existe um usuário com esse email' })
 
-      const user = await getRepository(UserEntity).create(request.body)
+      const user = getRepository(UserEntity).create(request.body)
       const results = await getRepository(UserEntity).save(user)
 
       return response.status(201).json(results)

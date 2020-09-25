@@ -16,7 +16,6 @@ export default class SignInController {
       const { email, password } = request.body
 
       const user = await getRepository(UserEntity).findOne({ where: { email } })
-      console.log(user)
       if (!user)
         return response.status(400).json({
           message: 'Email ou senha incorretoss'
