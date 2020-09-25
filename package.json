@@ -6,7 +6,8 @@
   "author": "Mateus Henrique <mateushenriquechaves1@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon --watch 'src/' --exec 'ts-node src/server.ts' -e ts"
+    "start": "nodemon --watch 'src/' --exec 'ts-node src/server.ts' -e ts",
+    "test": "jest"
   },
   "dependencies": {
     "@types/bcryptjs": "^2.4.2",
@@ -14,6 +15,7 @@
     "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.8",
     "@types/express-validator": "^3.0.0",
+    "@types/jest": "^26.0.14",
     "@types/jsonwebtoken": "^8.5.0",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
@@ -26,11 +28,14 @@
     "typeorm": "^0.2.26"
   },
   "devDependencies": {
+    "@babel/preset-typescript": "^7.10.4",
     "@types/node": "^14.11.2",
     "eslint": "^7.9.0",
     "eslint-plugin-import": "^2.22.0",
+    "jest": "^26.4.2",
     "nodemon": "^2.0.4",
     "prettier": "2.1.2",
+    "ts-jest": "^26.4.0",
     "ts-node": "^9.0.0",
     "typescript": "^4.0.3"
   },
