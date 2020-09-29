@@ -9,8 +9,7 @@
     "start": "nodemon --watch 'src/' --exec 'ts-node src/server.ts' -e ts",
     "test": "jest",
     "compile": "yarn tsc",
-    "build": "tsc",
-    "postinstall": "npm run build && cd dist && node server.js"
+    "build": "tsc"
   },
   "dependencies": {
     "@types/bcryptjs": "^2.4.2",

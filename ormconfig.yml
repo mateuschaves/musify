@@ -1,9 +1,9 @@
 default: # default connection
   type: 'postgres'
-  host: 'postgres://tflbyiandxldha:3f42dc5cc2ce0a91259fe6f7c77b797b599435ede6dc362bb05be4077b1fa00a@ec2-204-236-228-169.compute-1.amazonaws.com:5432/d60r6url74k3a6'
+  host: 'lallah.db.elephantsql.com'
   port: 5432
-  username: 'tflbyiandxldha'
-  password: '3f42dc5cc2ce0a91259fe6f7c77b797b599435ede6dc362bb05be4077b1fa00a'
-  database: 'd60r6url74k3a6'
+  username: 'pbcybzaf'
+  password: 'k98tNXeL3E303W62xy3Lsxn9Rdr8Yg4i'
+  database: 'pbcybzaf'
   entities: ['src/app/entities/*.ts']
-  synchronize: true
+  synchronize: false
