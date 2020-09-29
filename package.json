@@ -10,7 +10,7 @@
     "test": "jest",
     "compile": "yarn tsc",
     "build": "tsc",
-    "postinstall": "npm run build"
+    "postinstall": "npm run build && cd dist && node server.js"
   },
   "dependencies": {
     "@types/bcryptjs": "^2.4.2",
