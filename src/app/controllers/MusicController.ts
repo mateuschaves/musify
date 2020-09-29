@@ -57,7 +57,7 @@ export default class MusicController {
       })
 
       if (!music)
-        return response.status(400).json({ message: 'Música não encontrada' })
+        return response.status(422).json({ message: 'Música não encontrada' })
 
       await getRepository(MusicEntity).delete({
         id: music.id

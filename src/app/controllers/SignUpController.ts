@@ -15,7 +15,7 @@ export default class SignUpController {
       })
       if (checkUserAlreadyExists)
         return response
-          .status(400)
+          .status(422)
           .json({ message: 'Já existe um usuário com esse email' })
 
       const user = getRepository(UserEntity).create(request.body)

@@ -17,8 +17,8 @@ export default class SignInController {
 
       const user = await getRepository(UserEntity).findOne({ where: { email } })
       if (!user)
-        return response.status(400).json({
-          message: 'Email ou senha incorretoss'
+        return response.status(422).json({
+          message: 'Email ou senha incorretos'
         })
 
       const compareHash = await bcrypt.compare(password, user.password)
@@ -30,11 +30,12 @@ export default class SignInController {
 
         return response.status(200).json({
           token,
-          expiresIn: process.env.JWT_EXPIRES
+          expiresIn: process.env.JWT_EXPIRES,
+          user
         })
       }
 
-      return response.status(400).json({
+      return response.status(422).json({
         message: 'Email ou senha incorretos'
       })
     } catch (error) {
