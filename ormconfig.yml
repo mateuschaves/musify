@@ -1,9 +1,9 @@
 default: # default connection
   type: 'postgres'
-  host: 'lallah.db.elephantsql.com'
+  host: 'database'
   port: 5432
-  username: 'pbcybzaf'
-  password: 'k98tNXeL3E303W62xy3Lsxn9Rdr8Yg4i'
-  database: 'pbcybzaf'
+  username: 'postgres'
+  password: 123456
+  database: 'postgres'
   entities: ['src/app/entities/*.ts']
-  synchronize: false
+  synchronize: true

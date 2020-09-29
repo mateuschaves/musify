@@ -3,7 +3,7 @@ version: '3.3'
 services:
   messenger:
     build: .
-    command: yarn start
+    command: yarn start:dev
     container_name: 'api'
     networks:
       - webnet
