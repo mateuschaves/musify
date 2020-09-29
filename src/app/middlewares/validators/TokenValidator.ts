@@ -5,13 +5,13 @@ class Token {
   verifyToken(request: Request, response: Response, next) {
     const token: any = request.headers['token']
     if (!token)
-      return response.status(400).json({
+      return response.status(401).json({
         message: 'Token não informado'
       })
 
     jwt.verify(token, process.env.JWT_SECRET, function (err, decoded) {
       if (err) {
-        return response.status(400).send({
+        return response.status(401).send({
           message: 'Faça login para continuar.'
         })
       }

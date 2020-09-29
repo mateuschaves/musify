@@ -16,7 +16,7 @@ const postRules = () => [
     .withMessage('Qual o gênero da sua música ?')
     .isIn(['ROCK', 'POP', 'MPB', 'FUNK', 'SAMBA', 'PAGODE'])
     .withMessage(
-      'Esse gênero musical ainda não está disponnível em nossa plataforma'
+      'Esse gênero musical ainda não está disponível em nossa plataforma'
     )
 ]
 
