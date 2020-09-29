@@ -10,7 +10,6 @@
     "prestart": "npm run build",
     "start": "node dist/server.js",
     "test": "jest",
-    "compile": "yarn tsc",
     "build": "tsc",
     "postinstall": "npm run build"
   },
