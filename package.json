@@ -7,12 +7,12 @@
   "license": "MIT",
   "scripts": {
     "start:dev": "nodemon --watch 'src/' --exec 'ts-node src/server.ts' -e ts",
-    "prestart": "yarn build",
+    "prestart": "npm run build",
     "start": "node dist/server.js",
     "test": "jest",
     "compile": "yarn tsc",
     "build": "tsc",
-    "postinstall": "yarn build"
+    "postinstall": "npm run build"
   },
   "dependencies": {
     "@types/bcryptjs": "^2.4.2",
