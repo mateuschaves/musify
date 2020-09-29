@@ -10,7 +10,7 @@
     "prestart": "npm run build",
     "start": "node ./dist/server.js",
     "test": "jest",
-    "build": "tsc",
+    "build": "tsc --all",
     "postinstall": "npm run build"
   },
   "dependencies": {
