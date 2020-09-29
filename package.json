@@ -6,7 +6,8 @@
   "author": "Mateus Henrique <mateushenriquechaves1@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon --watch 'src/' --exec 'ts-node src/server.ts' -e ts",
+    "start:dev": "nodemon --watch 'src/' --exec 'ts-node src/server.ts' -e ts",
+    "start": "node dist/server.js",
     "test": "jest",
     "compile": "yarn tsc",
     "build": "tsc",
