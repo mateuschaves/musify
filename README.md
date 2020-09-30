@@ -11,6 +11,9 @@
 :white_check_mark: Typescript\
 :white_check_mark: Postgres
 
+
+[Link da collection no postman](https://documenter.getpostman.com/view/4758899/TVRd8qct)
+
 ## Instalação
 
 ```bash
